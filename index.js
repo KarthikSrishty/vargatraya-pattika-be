@@ -13,5 +13,7 @@ app.use("/users", userRouter)
 const URL='mongodb+srv://KarthikeyaSrishty:KarthikeyaSrishty@cluster0.g9kov.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 mongoose.connect(URL,{ dbName: "Nanna" });
-
-app.listen(3000, () => console.log('Server running on port 3000'));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
